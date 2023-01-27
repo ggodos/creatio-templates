@@ -16,3 +16,24 @@ viewModel является контекстом выполнения и view в 
 Скриншот кнопки:
 
 ![Скриншот](./images/analytics_button.png)
+
+
+### 2. Вызов бизнес процесса через js
+
+```javascript
+    func: function() {
+        ProcessModuleUtilities.executeProcess({
+          sysProcessName: "BusinessProcessName",
+          parameters: {
+            Param: this.get("ParamField"),
+          }
+        };);
+      }
+```
+
+### 3. Указать версию ecmascript
+
+Нужно вставить в начало файла:
+```javascript
+/*jshint esversion: 6 */
+```
