@@ -25,19 +25,33 @@ define("CustomName", ["terrasoft", "ext-base"], function () {
       });
     },
     render: function (renderTo) {
-      this.view = this.Ext.create("Terrasoft.Button", {
+      let firstButtonView = this.Ext.create("Terrasoft.Button", {
         renderTo: renderTo,
-        id: "buttonId",
+        id: "mainPageButton",
         className: "Terrasoft.Button",
-        caption: "Нажми меня",
+        caption: "Кнопка 1",
         click: {
-          bindTo: "onClickHandler",
+          bindTo: "onClickBtn",
         },
         style: this.Terrasoft.controls.ButtonEnums.style.GREEN,
       });
-      this.view.bind(this.viewModel);
 
-      return this.view;
+      let secondButtonView = this.Ext.create("Terrasoft.Button", {
+        renderTo: renderTo,
+        id: "mainPageButton",
+        className: "Terrasoft.Button",
+        caption: "Кнопка 2",
+        click: {
+          bindTo: "onClickBtn",
+        },
+        style: this.Terrasoft.controls.ButtonEnums.style.GREEN,
+      });
+
+      firstButtonView.bind(this.viewModel);
+      secondButtonView.bind(this.viewModel);
+
+      firstButtonView.render();
+      secondButtonView.render();
     },
 
     destroy: function () {
