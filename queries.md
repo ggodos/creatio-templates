@@ -4,6 +4,6 @@
 
 ```sql
 update "SysPackage"
-set "IsChanged" = False, "InstallType" = 1, "IsLocked" = False, "Maintainer" = 'Customer'
-where "Name" = 'PACKAGENAME'
+set "IsChanged" = True, "IsLocked" = True, "InstallType" = 0,  "Maintainer" = 'Customer'
+where "Name" = 'PACKAGE'
 ```
